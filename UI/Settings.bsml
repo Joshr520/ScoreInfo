@@ -1,0 +1,6 @@
+﻿﻿<settings-container>
+  <bool-setting text='Enable Menu Highscore' value='menuEnable'></bool-setting>
+  <bool-setting text='Enable End Level Rank' value='endEnable'></bool-setting>
+  <bool-setting text='Enable Average Hit Score' value='avgEnable'></bool-setting>
+  <bool-setting text='Enable Score List' value='listEnable'></bool-setting>
+</settings-container>

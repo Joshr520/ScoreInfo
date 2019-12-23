@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "author": "Scrappy",
+  "description": "Adds Score % to the end of level screen and menu. Additionally, average hit score is also added at the end of level.",
+  "gameVersion": "1.6.0",
+  "id": "ScoreInfo",
+  "name": "ScoreInfo",
+  "version": "1.0.0",
+  "dependsOn": {
+
+  },
+  "features": []
+}
