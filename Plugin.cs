@@ -1,6 +1,6 @@
 ﻿using IPA;
 using IPA.Config;
-using IPA.Utilities;
+using BeatSaberMarkupLanguage.Settings;
 using UnityEngine.SceneManagement;
 using IPALogger = IPA.Logging.Logger;
 using Harmony;
@@ -53,6 +53,10 @@ namespace ScoreInfo
                 avgScore = new GameObject("Average Score Per Hit").AddComponent<ScorePercentage>();
                 ScorePercentage.totalScore = 0;
                 ScorePercentage.numNotes = 0;
+            }
+            if (nextScene.name == "MenuViewControllers")
+            {
+                BSMLSettings.instance.AddSettingsMenu("Score Info", "ScoreInfo.UI.settings.bsml", UI.Settings.instance);
             }
         }
 

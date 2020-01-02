@@ -1,7 +1,7 @@
 ﻿using BeatSaberMarkupLanguage.Attributes;
 using BS_Utils.Utilities;
 
-namespace ScorePercentage.UI
+namespace ScoreInfo.UI
 {
     class Settings : PersistentSingleton<Settings>
     {

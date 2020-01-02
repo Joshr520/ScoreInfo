@@ -10,7 +10,7 @@ namespace ScoreInfo.HarmonyPatches
         static void Postfix(ref StandardLevelDetailViewPatches __instance)
         {
             //Only run calculation, if it isn't disabled
-            if (!Settings.Config.EnableMenuHighscore)
+            if (UI.Settings.instance.isMenuEnabled)
             {
                 return;
             }

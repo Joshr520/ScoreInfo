@@ -8,7 +8,7 @@ namespace ScoreInfo.HarmonyPatches
     {
         static void Postfix(ref ResultsViewControllerPatches __instance)
         {
-            if (!Settings.Config.EnableLevelEndRank)
+            if (UI.Settings.instance.isEndEnabled)
             {
                 return;
             }
@@ -40,7 +40,14 @@ namespace ScoreInfo.HarmonyPatches
                 //disable wrapping and autosize. format string and overwite rankText
                 __instance._rankText.autoSizeTextContainer = false;
                 __instance._rankText.enableWordWrapping = false;
-                __instance._rankText.text = "<size=70%>" + resultPercentage.ToString() + "<size=50%>" + "%\n" + "<size=70%>" + ((resultAvgPercentage * 115) / 100).ToString() + "<size=50%>" + "/" + 115.ToString();
+                if (UI.Settings.instance.isAvgEnabled)
+                {
+                    __instance._rankText.text = "<size=70%>" + resultPercentage.ToString() + "<size=50%>" + "%\n" + "<size=70%>" + ((resultAvgPercentage * 115) / 100).ToString() + "<size=50%>" + "/" + 115.ToString();
+                }
+                else
+                {
+                    __instance._rankText.text = "<size=70%>" + resultPercentage.ToString() + "<size=50%>";
+                }
                 Logger.log.Debug("Total Score: " + ScorePercentage.totalScore.ToString());
                 Logger.log.Debug((115*ScorePercentage.numNotes).ToString());
                 Logger.log.Debug(ScorePercentage.numNotes.ToString());

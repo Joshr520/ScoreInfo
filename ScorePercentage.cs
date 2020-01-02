@@ -65,7 +65,10 @@ namespace ScoreInfo
                 numNotes++;
                 int newScore = beforeCutRawScore + afterCutRawScore + cutDistanceRawScore;
                 totalScore += newScore;
-                scoreList[newScore]++;
+                if (UI.Settings.instance.isListEnabled)
+                {
+                    scoreList[newScore]++;
+                }
                 done = true;
                 info.swingRatingCounter.didFinishEvent -= addScore;
             }
